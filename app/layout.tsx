@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
+import UnifiedThemeToggle from "@/components/themetog";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,15 +28,24 @@ export default function RootLayout({
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
       enableSystem
       disableTransitionOnChange
     >
       <html lang="en">
+        <head>
+          {process.env.NODE_ENV === "development" && (
+            <script
+              crossOrigin="anonymous"
+              src="//unpkg.com/react-scan/dist/auto.global.js"
+            />
+          )}
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           {children}
+          <UnifiedThemeToggle />
         </body>
       </html>
     </ThemeProvider>
