@@ -1,6 +1,8 @@
 "use client";
 
-import { Monitor, Moon, SunDim } from "lucide-react";
+import { Monitor } from "@phosphor-icons/react/dist/csr/Monitor";
+import { Moon } from "@phosphor-icons/react/dist/csr/Moon";
+import { SunHorizon } from "@phosphor-icons/react/dist/csr/SunHorizon";
 import { useTheme } from "next-themes";
 import * as React from "react";
 
@@ -31,7 +33,7 @@ const UnifiedThemeToggle = () => {
           variant="outline"
           aria-label="switch to light theme"
         >
-          <SunDim className="size-4" />
+          <SunHorizon />
         </Button>
       )}
       {theme === "light" && (
@@ -42,7 +44,7 @@ const UnifiedThemeToggle = () => {
           variant="outline"
           aria-label="switch to system theme"
         >
-          <Monitor className="size-4" />
+          <Monitor />
         </Button>
       )}
       {theme === "system" && (
@@ -53,7 +55,7 @@ const UnifiedThemeToggle = () => {
           variant="outline"
           aria-label="switch to dark theme"
         >
-          <Moon className="size-4" />
+          <Moon />
         </Button>
       )}
     </div>

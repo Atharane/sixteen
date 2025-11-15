@@ -119,4 +119,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .debug {
+    outline: 1px solid crimson;
+  }
 }
